@@ -8,10 +8,13 @@
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void(*func)(int))
 {
+	size_t height = binary_tree_height(tree);
+
 	if (tree == NULL || func == NULL)
 		return;
 
-	binary_tree_t **queue = malloc(sizeof(binary_tree_t *) *binary_tree_height(tree));
+	binary_tree_t **queue = malloc(sizeof(binary_tree_t *) * height);
+
 	if (queue == NULL)
 		return;
 
